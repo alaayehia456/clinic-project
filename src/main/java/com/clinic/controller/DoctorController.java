@@ -28,7 +28,7 @@ public class DoctorController{
     }
 
     @PutMapping("/assign-de-assign-clinic/{doctorId}")
-    public ResponseEntity<DoctorDto> assignOrDeAssignDoctorToClinic(@PathVariable Long doctorId,@RequestParam Long clinicId){
+    public ResponseEntity<DoctorDto> assignOrDeAssignDoctorToClinic(@PathVariable Long doctorId,@RequestParam(required = false) Long clinicId){
         return ResponseEntity.ok(doctorService.assignOrDeAssignDoctorToClinic(doctorId,clinicId));
     }
 }
